@@ -11,8 +11,7 @@ app.use(express.json());
 
 const hospital = new HospitalFacade(GerenciadorConsultas, new NotificadorHttp());
 
-// Servir arquivos estáticos do frontend global
-app.use(express.static(path.join(__dirname, "../../../../frontend")));
+app.use(express.static(path.join(__dirname, '..', '..', 'frontend')));
 
 app.post("/agendar", async (req, res) => {
   const consulta = await hospital.agendar(req.body);
