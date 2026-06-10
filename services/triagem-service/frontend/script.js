@@ -44,7 +44,6 @@ document
     const resultadoDiv =
     document.getElementById("resultado");
 
-    /* REMOVE CLASSES ANTIGAS */
     resultadoDiv.classList.remove(
         "normal",
         "urgente",
