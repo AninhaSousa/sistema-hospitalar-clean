@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital System</title>
+  <link rel="stylesheet" href="style.css">
+  <link
+    rel="icon"
+    type="image/png"
+    href="favicon.png"
+>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <img
+    src="logo.png"
+    alt="Logo Hospital"
+    class="logo"
+>
+
+        <h1>
+            Sistema Hospitalar
+        </h1>
+
+        <form id="consultaForm">
+
+            <input
+                type="text"
+                id="paciente"
+                placeholder="Nome do paciente"
+                required
+            >
+            <textarea
+                id="sintomas"
+                placeholder="Descreva os sintomas do paciente"
+                required
+            ></textarea>
+            
+            <input
+                type="date"
+                id="dataConsulta"
+                required
+            >
+            <input
+                type="time"
+                id="horaConsulta"
+                required
+            >
+
+            <select id="especialidade">
+
+                <option>
+                    Cardiologia
+                </option>
+
+                <option>
+                    Pediatria
+                </option>
+
+                <option>
+                    Ortopedia
+                </option>
+
+            </select>
+
+            <select id="prioridade">
+
+                <option>
+                    Normal
+                </option>
+
+                <option>
+                    Urgente
+                </option>
+
+                <option>
+                    Emergência
+                </option>
+
+            </select>
+
+            <button type="submit">
+                Agendar Consulta
+            </button>
+
+        </form>
+
+        <div id="resultado"></div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
