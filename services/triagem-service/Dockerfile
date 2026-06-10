@@ -1,20 +1,19 @@
-# Usa uma imagem oficial do Node.js estável
 FROM node:20-alpine
 
-# Define a pasta de trabalho dentro do contêiner
 WORKDIR /app
 
 # Copia os arquivos de dependências
 COPY package*.json ./
 
-# Instala as dependências de produção (ignora as de teste para ficar leve)
-RUN npm install --only=production
+# Instala as dependências
+RUN npm install
 
-# Copia o restante do código do microsserviço
-COPY . .
+# Copia todo o código do servidor (a pasta src)
+COPY src ./src
 
-# Expõe a porta que o serviço usa
+# 🌟 ADICIONE ESTA LINHA NOVA AQUI EMBAIXO:
+COPY frontend ./frontend
+
 EXPOSE 3001
 
-# Comando para iniciar o microsserviço
-CMD ["npm", "start"]
+CMD ["node", "src/infrastructure/server.js"]
