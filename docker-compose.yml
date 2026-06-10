@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  triagem-service:
+    build:
+      context: ./services/triagem-service
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+    volumes:
+      - ./frontend:/frontend # Compartilha o frontend para o Express servir
+    depends_on:
+      - notificacao-service
+
+  notificacao-service:
+    build:
+      context: ./services/notificacao-service
+    ports:
+      - "3002:3002"
+    environment:
+      - PORT=3002
