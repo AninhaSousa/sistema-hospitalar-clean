@@ -1,7 +1,7 @@
 class NotificadorHttp {
   async enviarNotificacao(mensagem) {
     try {
-      // O service de notificação rodará na porta 3002
+      // A notificação rodará na porta 3002
       await fetch("https://notificacao-service-ana.onrender.com/notificar", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

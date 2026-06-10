@@ -28,10 +28,8 @@ class HospitalFacade {
     consulta.sintomas = dados.sintomas;
     consulta.prioridade = estrategia.definir();
 
-    // Salva no Singleton (banco em memória)
     this.gerenciador.adicionar(consulta);
 
-    // Comunicação entre Microsserviços: Avisa o serviço de notificação de forma assíncrona
     if (this.notificadorHttp) {
       this.notificadorHttp.enviarNotificacao(`Nova consulta triada: Paciente ${dados.paciente} com prioridade ${consulta.prioridade}`);
     }

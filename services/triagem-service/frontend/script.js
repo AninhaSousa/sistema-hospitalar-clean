@@ -51,7 +51,6 @@ document
         "emergencia"
     );
 
-    /* DEFINE COR */
     if(prioridade === "Normal"){
 
         resultadoDiv.classList.add("normal");

@@ -1,0 +1,72 @@
+# Sistema Inteligente de Triagem e Acolhimento Hospitalar (SITAH)
+
+Este projeto consiste em uma solução de software voltada para o gerenciamento de fluxos de triagem e classificação de risco hospitalar (baseado no Protocolo de Manchester). O ecossistema foi construído utilizando práticas modernas de engenharia de software, incluindo microsserviços, Arquitetura Limpa, princípios SOLID, Design Patterns, TDD, BDD e containerização com Docker.
+
+
+## 🚀 Como Acessar o Projeto na Nuvem
+
+O sistema foi publicado com sucesso e está dividido em dois microsserviços hospedados no Render:
+
+* **Interface e Triagem (Front-end & API):** [https://triagem-service-ana.onrender.com](https://triagem-service-ana.onrender.com)
+* **Serviço de Notificação:** [https://notificacao-service-ana.onrender.com](https://notificacao-service-ana.onrender.com)
+
+### 📌 Links Úteis do Servidor:
+* **Visualizar a lista de consultas:** Para checar todos os pacientes triados salvos em tempo real na memória do servidor, acesse a rota:  
+    👉 `https://triagem-service-ana.onrender.com/consultas`
+
+
+
+## 🛠️ Tecnologias Utilizadas
+
+* **Linguagem:** JavaScript (Sintaxe moderna ES6+)
+* **Ambiente/Framework:** Node.js & Express.js
+* **Mecanismos de Teste:** Jest (TDD) e Cucumber.js (BDD)
+* **Infraestrutura:** Docker e Docker Compose
+* **Hospedagem/Deploy:** Render
+
+
+## 🧬 Princípios e Padrões Aplicados (Ficha Técnica)
+
+1.  **Arquitetura Limpa:** Separação rígida de responsabilidades em camadas isoladas (`domain`, `application` e `infrastructure`), garantindo que as regras de negócio não dependam de frameworks ou bibliotecas externas.
+2.  **Princípios SOLID:**
+    * **SRP (Responsabilidade Única):** Cada classe possui apenas um motivo para mudar (ex: estratégias dedicadas apenas a rotulagem de sintomas).
+    * **OCP (Aberto/Fechado):** Inclusão de novas regras de triagem sem modificar o código existente através do padrão Strategy.
+    * **DIP (Inversão de Dependência):** Casos de uso dependem de abstrações injetadas no construtor, facilitando testes e manutenções.
+3.  **Design Patterns (4 Utilizados):**
+    * **Strategy:** Isolamento dos algoritmos de priorização clínica.
+    * **Factory Method:** Centralização da criação dos objetos complexos de consultas.
+    * **Facade:** Interface única e unificada para simplificar as rotas do Express.
+    * **Singleton:** Instância global e única da lista de dados em memória (`Object.freeze`).
+4.  **TDD (Test-Driven Development):** Validação das estratégias desenvolvidas sob o ciclo Red-Green-Refactor no Jest.
+5.  **BDD (Behavior-Driven Development):** Especificação viva dos requisitos do enfermeiro descrita em linguagem Gherkin (Dado/Quando/Então) automatizada com Cucumber.
+
+
+
+## 💻 Como Rodar o Projeto Localmente
+
+Se desejar baixar e testar a aplicação no seu ambiente de desenvolvimento, siga os passos abaixo:
+
+### Pré-requisitos:
+* Ter o [Git](https://git-scm.com/) instalado.
+* Ter o [Docker e Docker Compose](https://www.docker.com/) instalados.
+
+### Passo a Passo:
+
+1. Clone o repositório para a sua máquina:
+  
+   git clone [https://github.com/SEU_USUARIO_DO_GITHUB/sistema-hospitalar-clean.git](https://github.com/SEU_USUARIO_DO_GITHUB/sistema-hospitalar-clean.git)
+
+2.  Entre na pasta e após isso, suba o ecossistema inteiro de microsserviços usando o Docker Compose:
+
+    a. cd sistema-hospitalar-clean
+
+    b. docker-compose up --build
+
+3. O Docker vai baixar as imagens e iniciar os serviços automaticamente:
+
+    Acesse o front-end/sistema de triagem em: http://localhost:3001
+
+    Verifique os logs do microsserviço de notificação rodando na porta 3002.
+
+Autor:
+Ana Sousa

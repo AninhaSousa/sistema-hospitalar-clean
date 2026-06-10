@@ -143,7 +143,6 @@ button{
     letter-spacing:1px;
 }
 
-/* HOVER */
 button:hover{
 
     background:#0c879c;
@@ -154,7 +153,6 @@ button:hover{
     0 5px 15px rgba(0,0,0,0.15);
 }
 
-/* ACTIVE */
 button:active{
 
     transform:scale(0.98);
@@ -171,7 +169,6 @@ button:active{
     transition:0.3s;
 }
 
-/* PRIORIDADES */
 
 .normal{
     background:#2e89ff;
@@ -185,7 +182,6 @@ button:active{
     background:#ff0015;
 }
 
-/* ANIMAÇÃO */
 
 @keyframes fadeIn{
 
